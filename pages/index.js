@@ -8,9 +8,12 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import clientPromise from '../lib/mongodb'
+import { InferGetServerSidePropsType } from 'next'
+
+
+export default function Home({ experiences }) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
@@ -49,7 +52,7 @@ export default function Home() {
 
     </div>
         </motion.div >  */}
-        <Experiences />
+        <Experiences experiences={experiences} />
       </section >
 
       <section id='skills' className='snap-start'>
@@ -74,4 +77,20 @@ export default function Home() {
 
     </div >
   )
+}
+
+export async function getServerSideProps(context) {
+
+  const client = await clientPromise
+
+  const db = await client.db('ashik-portfolio');
+
+  const data = await db.collection('experience').find({}).toArray();
+
+  const experiences = JSON.parse(JSON.stringify(data));
+
+  return {
+    props: { experiences },
+  }
+
 }
