@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SocialIcon } from 'react-social-icons';
 
 function Projects({ projects }) {
 
-    // console.log(projects);
+    console.log(projects);
 
     return (
         <motion.div
@@ -26,28 +27,57 @@ function Projects({ projects }) {
                 {
                     projects.map((project, index) => (
                         <div key={index} className='relative top-12 w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center overflow-x-scroll overflow-y-hidden snap-x snap-mandatory'>
-                            <motion.img
-                                initial={{
-                                    y: -300,
-                                    opacity: 0,
-                                }}
-                                transition={{
-                                    duration: 1.2
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0
-                                }}
-                                viewport={{
-                                    once: true
-                                }}
-                                className='w-80 relative top-16'
-                                src={project.photo} alt="" />
+                            <div className='relative top-12'>
+                                <span className='font-bold'>Case Study {index + 1} of {projects.length}:</span>
+                            </div>
+                            <div className=' relative top-16 md:flex md:ml-36'>
+                                <motion.img
+                                    initial={{
+                                        y: -300,
+                                        opacity: 0,
+                                    }}
+                                    transition={{
+                                        duration: 1.2
+                                    }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        y: 0
+                                    }}
+                                    viewport={{
+                                        once: true
+                                    }}
+                                    className='w-80 border-2'
+                                    src={project.photo} alt="" />
+                                <div className='flex md:flex-col items-center justify-center md:space-x-2'>
+                                    {/* social icons */}
+                                    <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                        <SocialIcon url={project.preview}
+                                            fgColor='gray'
+                                            bgColor='transparent' />
+                                        <span className='md:hidden group-hover:inline ease-in-out'>Visit Site</span>
+                                    </div>
+                                    <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                        <SocialIcon url={project.gitClient}
+                                            fgColor='gray'
+                                            bgColor='transparent' />
+                                        <span className='md:hidden group-hover:inline ease-in-out'>Client</span>
+                                    </div>
+                                    {
+                                        project.gitServer &&
+                                        <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                            <SocialIcon url={project.gitServer}
+                                                fgColor='gray'
+                                                bgColor='transparent' />
+                                            <span className='md:hidden group-hover:inline ease-in-out'>Server</span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
                             <div className='space-y-10 p-16 px-2 md:px-10 max-w-6xl'>
                                 <h4 className='text-4xl font-semibold text-center'>
-                                    <span className='underline decoration-[#F7AB0A]/50'>Case Study {index + 1} of {projects.length}: UPS clone</span>
+                                    <span className='underline decoration-[#F7AB0A]/50'>{project.name}</span>
                                 </h4>
-                                <p className='text-lg md:text-left px-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum iste minima pariatur ipsum ipsam cupiditate maiores facilis! Molestiae id libero aliquid. Fugit eveniet vel consequuntur enim, eligendi quae aperiam magni minima quasi eum unde blanditiis a. Officia sapiente recusandae delectus quos.</p>
+                                <p className='text-lg md:text-left px-4'>{project.description}</p>
                             </div>
                         </div>
                     ))

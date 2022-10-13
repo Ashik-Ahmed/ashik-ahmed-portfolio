@@ -92,7 +92,7 @@ export async function getServerSideProps(context) {
   const skills = JSON.parse(JSON.stringify(skillsData));
 
   const projectsData = await db.collection('projects').find({}).toArray();
-  const projects = JSON.parse(JSON.stringify(projectsData));
+  const projects = JSON.parse(JSON.stringify(projectsData)).reverse();
 
   return {
     props: { experiences, skills, projects },

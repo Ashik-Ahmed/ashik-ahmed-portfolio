@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { MdLogout } from 'react-icons/md';
 
 export default function ExperienceCard({ experience }) {
-    console.log(experience.start);
     const { role, company, companyLogo, tech, start, end, responsibilities, } = experience;
     return (
         <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3 hover:opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 relative top-20'>
@@ -32,8 +31,9 @@ export default function ExperienceCard({ experience }) {
                     <div className='flex space-x-2 my-2'>
                         {
                             tech?.map((technology, index) => (
-                                <img key={index} className='w-10 h-10 rounded-full' src={technology[index]} alt="" />
-
+                                <>
+                                    <img key={index} className='w-10 h-10' src={technology} alt="" />
+                                </>
                             ))
                         }
                         {/* <img className='w-10 h-10 rounded-full' src="https://ashik-ahmed.netlify.app/static/media/vscode.a2ea685afa8a93556564.png" alt="" />
