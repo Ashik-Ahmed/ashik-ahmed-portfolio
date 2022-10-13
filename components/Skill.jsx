@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Skill({ directionLeft }) {
+export default function Skill({ directionLeft, skill }) {
+    const { name, icon, proficiency } = skill;
     return (
         <div className='group relative flex cursor-pointer'>
-            <motion.img
+            <motion.div
                 initial={{
                     x: directionLeft ? -200 : 200,
                     opacity: 0,
@@ -16,13 +17,18 @@ export default function Skill({ directionLeft }) {
                     opacity: 1,
                     x: 0,
                 }}
-                src='https://avatars.githubusercontent.com/u/30996446?v=4'
-                className='rounded-full border border-gray-500 object-cover w-24 h-24  filter group-hover:grayscale transition duration-300 ease-in-out'
-            />
+                className='flex space-x-5 rounded-md items-center bg-white p-3 w-72'
+            >
+                <img
+                    src={icon}
+                    className='w-24 h-24  filter group-hover:grayscale group-hover:opacity-20 transition duration-300 ease-in-out'
+                />
+                <p className='text-gray-700 text-2xl font-bold uppercase  group-hover:opacity-20 hidden md:block'>{name}</p>
+            </motion.div>
 
-            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 rounded-full z-0'>
+            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-gray-900 w-full h-full z-0'>
                 <div className='flex items-center justify-center h-full'>
-                    <p className='text-3xl font-bold text-black opacity-100'>100%</p>
+                    <p className='text-3xl font-bold text-white opacity-100'>{proficiency}</p>
                 </div>
             </div>
         </div>

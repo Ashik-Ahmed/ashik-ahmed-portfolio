@@ -6,7 +6,7 @@ export default function ExperienceCard({ experience }) {
     console.log(experience.start);
     const { role, company, companyLogo, tech, start, end, responsibilities, } = experience;
     return (
-        <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] md:px-10 py-3 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 relative top-20'>
+        <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3 hover:opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 relative top-20'>
             <div className='flex'>
                 <motion.img
                     initial={{
@@ -23,7 +23,7 @@ export default function ExperienceCard({ experience }) {
                     viewport={{
                         once: true
                     }}
-                    className='w-32 h-32 p-8 xl:w-[200px] xl:h-[200px] object-center'
+                    className='w-32 h-32 p-2 xl:w-[200px] xl:h-[200px] object-fill object-center border-2 bg-white'
                     src={companyLogo} alt="" />
 
                 <div className='px-0 md:px-10'>

@@ -13,7 +13,7 @@ import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 
 
-export default function Home({ experiences }) {
+export default function Home({ experiences, skills, projects }) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
@@ -56,11 +56,11 @@ export default function Home({ experiences }) {
       </section >
 
       <section id='skills' className='snap-start'>
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id='projects' className='snap-start'>
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id='contact' className='snap-start'>
@@ -86,11 +86,16 @@ export async function getServerSideProps(context) {
   const db = await client.db('ashik-portfolio');
 
   const data = await db.collection('experience').find({}).toArray();
-
   const experiences = JSON.parse(JSON.stringify(data));
 
+  const skillsData = await db.collection('skills').find({}).toArray();
+  const skills = JSON.parse(JSON.stringify(skillsData));
+
+  const projectsData = await db.collection('projects').find({}).toArray();
+  const projects = JSON.parse(JSON.stringify(projectsData));
+
   return {
-    props: { experiences },
+    props: { experiences, skills, projects },
   }
 
 }
