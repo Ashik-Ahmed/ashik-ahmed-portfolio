@@ -28,7 +28,7 @@ function Projects({ projects }) {
                     projects.map((project, index) => (
                         <div key={index} className='relative top-12 w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center overflow-x-scroll overflow-y-hidden snap-x snap-mandatory'>
                             <div className='relative top-12'>
-                                <span className='font-bold'>Case Study {index + 1} of {projects.length}:</span>
+                                <span className='font-bold'>Project {index + 1} of {projects.length}:</span>
                             </div>
                             <div className=' relative top-16 md:flex md:ml-36'>
                                 <motion.img
@@ -46,17 +46,17 @@ function Projects({ projects }) {
                                     viewport={{
                                         once: true
                                     }}
-                                    className='w-80 border-2'
+                                    className='w-80 border-2 cursor-pointer'
                                     src={project.photo} alt="" />
                                 <div className='flex md:flex-col items-center justify-center md:space-x-2'>
                                     {/* social icons */}
-                                    <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                    <div className='group hover:bg-gray-700 md:w-36 flex items-center rounded-md cursor-pointer transition hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out'>
                                         <SocialIcon url={project.preview}
                                             fgColor='gray'
                                             bgColor='transparent' />
                                         <span className='md:hidden group-hover:inline ease-in-out'>Visit Site</span>
                                     </div>
-                                    <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                    <div className='group hover:bg-gray-700 md:w-36 flex items-center rounded-md cursor-pointer transition hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out'>
                                         <SocialIcon url={project.gitClient}
                                             fgColor='gray'
                                             bgColor='transparent' />
@@ -64,11 +64,11 @@ function Projects({ projects }) {
                                     </div>
                                     {
                                         project.gitServer &&
-                                        <div className='group transition-all ease-in-out hover:bg-gray-700 md:w-36 flex items-center rounded-md'>
+                                        <div className='group hover:bg-gray-700 md:w-36 flex items-center rounded-md cursor-pointer transition hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out'>
                                             <SocialIcon url={project.gitServer}
                                                 fgColor='gray'
                                                 bgColor='transparent' />
-                                            <span className='md:hidden group-hover:inline ease-in-out'>Server</span>
+                                            <span className='md:hidden group-hover:inline transition delay-150 ease-in-out'>Server</span>
                                         </div>
                                     }
                                 </div>

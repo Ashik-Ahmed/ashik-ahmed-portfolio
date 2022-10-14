@@ -22,13 +22,13 @@ export default function Header() {
                 }}
                 className='flex flex-row items-center'>
                 {/* social icons */}
-                <SocialIcon url="https://www.linkedin.com/in/ashikahmed121/"
+                <SocialIcon url="https://github.com/Ashik-Ahmed"
                     fgColor='gray'
                     bgColor='transparent' />
                 <SocialIcon url="https://www.linkedin.com/in/ashikahmed121/"
                     fgColor='gray'
                     bgColor='transparent' />
-                <SocialIcon url="https://www.linkedin.com/in/ashikahmed121/"
+                <SocialIcon url="https://www.facebook.com/ashik.ahmed007"
                     fgColor='gray'
                     bgColor='transparent' />
             </motion.div>

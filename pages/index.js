@@ -68,9 +68,10 @@ export default function Home({ experiences, skills, projects }) {
       </section>
 
       <Link href='#hero'>
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
+        <footer className='sticky bottom-4 w-fit mx-auto cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <img className='w-10 h-10 rounded-full grayscale hover:grayscale-0' src="https://avatars.githubusercontent.com/u/30996446?v=4" alt="" />
+            {/* <img className='w-10 h-10 rounded-full grayscale hover:grayscale-0' src="https://avatars.githubusercontent.com/u/30996446?v=4" alt="" /> */}
+            <p className='text-gray-400'>Back to Top</p>
           </div>
         </footer>
       </Link>

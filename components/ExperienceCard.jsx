@@ -5,7 +5,7 @@ import { MdLogout } from 'react-icons/md';
 export default function ExperienceCard({ experience }) {
     const { role, company, companyLogo, tech, start, end, responsibilities, } = experience;
     return (
-        <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3 hover:opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 relative top-20'>
+        <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3  cursor-pointer transition-opacity duration-200 relative top-20'>
             <div className='flex'>
                 <motion.img
                     initial={{
@@ -40,7 +40,10 @@ export default function ExperienceCard({ experience }) {
                         <img className='w-10 h-10 rounded-full' src="https://ashik-ahmed.netlify.app/static/media/vscode.a2ea685afa8a93556564.png" alt="" />
                         <img className='w-10 h-10 rounded-full' src="https://ashik-ahmed.netlify.app/static/media/vscode.a2ea685afa8a93556564.png" alt="" /> */}
                     </div>
-                    <p className='uppercase py-5 text-gray-300'>Started work - {new Date(start).toISOString().split('T')[0]} Ended - {end && new Date(end).toISOString().split('T')[0]}</p>
+                    <div>
+                        <p className='text-gray-300'><span className='font-bold'>Started :</span> {new Date(start).toISOString().split('T')[0]}</p>
+                        <p className='text-gray-300'><span className='font-bold'>Ended :</span> {end ? new Date(end).toISOString().split('T')[0] : 'Continue'}</p>
+                    </div>
                 </div>
             </div>
             <div>

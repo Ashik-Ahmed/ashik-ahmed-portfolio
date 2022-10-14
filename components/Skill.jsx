@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function Skill({ directionLeft, skill }) {
     const { name, icon, proficiency } = skill;
     return (
-        <div className='group relative flex cursor-pointer'>
+        <div className='group relative flex cursor-pointer transition hover:-translate-y-1 hover:scale-110 delay-150 duration-300 ease-in-out'>
             <motion.div
                 initial={{
                     x: directionLeft ? -200 : 200,
@@ -26,7 +26,7 @@ export default function Skill({ directionLeft, skill }) {
                 <p className='text-gray-700 text-2xl font-bold uppercase  group-hover:opacity-20 hidden md:block'>{name}</p>
             </motion.div>
 
-            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-gray-900 w-full h-full z-0'>
+            <div className='absolute rounded-md opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-gray-900 w-full h-full z-0'>
                 <div className='flex items-center justify-center h-full'>
                     <p className='text-3xl font-bold text-white opacity-100'>{proficiency}</p>
                 </div>
