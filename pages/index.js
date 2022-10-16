@@ -13,21 +13,21 @@ import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 
 
-export default function Home({ experiences, skills, projects }) {
+export default function Home({ social_icon, about, experiences, skills, projects }) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
         <title>{`Ashik's Portfolio`}</title>
       </Head>
 
-      <Header />
+      <Header social_icon={social_icon} />
 
       <section id='hero' className='snap-start'>
         <Hero />
       </section>
 
       <section id='about' className='snap-center'>
-        <About />
+        <About about={about} />
       </section>
 
       <section id='experience' className='snap-center'>
@@ -86,6 +86,12 @@ export async function getServerSideProps(context) {
 
   const db = await client.db('ashik-portfolio');
 
+  const socialData = await db.collection('social_icon').find({}).toArray();
+  const social_icon = JSON.parse(JSON.stringify(socialData));
+
+  const aboutData = await db.collection('about').find({}).toArray();
+  const about = JSON.parse(JSON.stringify(aboutData));
+
   const data = await db.collection('experience').find({}).toArray();
   const experiences = JSON.parse(JSON.stringify(data));
 
@@ -96,7 +102,13 @@ export async function getServerSideProps(context) {
   const projects = JSON.parse(JSON.stringify(projectsData)).reverse();
 
   return {
-    props: { experiences, skills, projects },
+    props: {
+      social_icon,
+      about,
+      experiences,
+      skills,
+      projects
+    },
   }
 
 }

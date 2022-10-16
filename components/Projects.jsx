@@ -4,8 +4,6 @@ import { SocialIcon } from 'react-social-icons';
 
 function Projects({ projects }) {
 
-    console.log(projects);
-
     return (
         <motion.div
             initial={{

@@ -3,7 +3,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from 'framer-motion';
 
 
-export default function Header() {
+export default function Header({ social_icon }) {
     return (
         <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
             <motion.div
@@ -20,17 +20,20 @@ export default function Header() {
                 transition={{
                     duration: 1.5
                 }}
-                className='flex flex-row items-center'>
+                className='flex flex-row items-center gap-x-2'>
                 {/* social icons */}
-                <SocialIcon url="https://github.com/Ashik-Ahmed"
-                    fgColor='gray'
-                    bgColor='transparent' />
-                <SocialIcon url="https://www.linkedin.com/in/ashikahmed121/"
-                    fgColor='gray'
-                    bgColor='transparent' />
-                <SocialIcon url="https://www.facebook.com/ashik.ahmed007"
-                    fgColor='gray'
-                    bgColor='transparent' />
+
+                {
+                    social_icon.map(social => (
+                        <>
+                            <SocialIcon
+                                key={social._id}
+                                url={social.link}
+                                fgColor='gray'
+                                bgColor='transparent' />
+                        </>
+                    ))
+                }
             </motion.div>
             <motion.div
                 initial={{
