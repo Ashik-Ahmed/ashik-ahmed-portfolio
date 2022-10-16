@@ -24,7 +24,7 @@ export default function ExperienceCard({ experience }) {
                     className='w-32 h-32 p-2 xl:w-[200px] xl:h-[200px] object-fill object-center border-2 bg-white'
                     src={companyLogo} alt="" />
 
-                <div className='px-0 md:px-10'>
+                <div className='px-2 md:px-10'>
                     <h4 className='text-xl md:text-4xl font-light'>{role}</h4>
                     <p className='font-bold text-lg md:text-2xl mt-1'>{company}</p>
                     <div className='flex space-x-2 my-2'>
@@ -50,7 +50,7 @@ export default function ExperienceCard({ experience }) {
                 <ul className='list-disc space-y-1 ml-5 text-lg'>
                     {
                         responsibilities.map((resp, index) => (
-                            <li key={index} className='flex items-center'>
+                            <li key={index} className='flex md:items-center'>
                                 <svg className="w-4 h-4 mr-1.5 text-[#F7AB0A]/80 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
                                 {resp}

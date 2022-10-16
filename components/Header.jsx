@@ -51,6 +51,7 @@ export default function Header({ social_icon }) {
                 }}
                 className='flex flex-row items-center text-gray-300 cursor-pointer'>
                 <SocialIcon className='cursor-pointer'
+                    url='#contact'
                     network='email'
                     fgColor='gray'
                     bgColor='transparent' />
