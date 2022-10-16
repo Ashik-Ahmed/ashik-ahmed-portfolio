@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function ExperienceCard({ experience }) {
+
     const { role, company, companyLogo, companyInfo, tech, start, end, responsibilities, } = experience;
+
     return (
         <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3  cursor-pointer transition-opacity duration-200 relative top-20'>
             <div className='flex'>

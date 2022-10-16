@@ -15,7 +15,7 @@ export default function Skills({ skills }) {
                 duration: 1.5
             }}
 
-            className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center overflow-y-hidden overflow-x-hidden'>
+            className='flex relative flex-col text-center md:text-left xl:flex-row xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center overflow-y-hidden overflow-x-hidden'>
             <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] skew-y-[11deg] -mt-24'>
 
             </div>
