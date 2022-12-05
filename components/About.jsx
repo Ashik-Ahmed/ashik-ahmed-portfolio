@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About({ about }) {
 
-    console.log(about[0])
-    const { title, bio, strengths } = about[0];
-    console.log(strengths)
+    const { title, titlePhoto, bio, strengths } = about[0];
 
     return (
         <motion.div
@@ -24,7 +23,7 @@ export default function About({ about }) {
             </div>
             <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-400 font-bold text-3xl'>About</h3>
 
-            <motion.img
+            <motion.div
                 initial={{
                     x: -200,
                     opacity: 0,
@@ -39,8 +38,11 @@ export default function About({ about }) {
                 }}
                 viewport={{ once: true }}
 
-                className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] mt-16 md:mt-0 relative top-36 md:top-20'
-                src="https://avatars.githubusercontent.com/u/30996446?v=4" alt="" />
+                className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56  md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] mt-16 md:mt-0 relative top-36 md:top-20'
+            >
+                <Image src={titlePhoto} className="rounded-full object-cover md:rounded-lg" alt="" layout='fill'></Image>
+
+            </motion.div>
 
             <div className='space-y-10 px-0 md:px-10 relative top-60 md:top-12 max-w-7xl'>
                 {/* <h4 className='text-4xl font-semibold'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background</h4> */}

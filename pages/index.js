@@ -23,7 +23,7 @@ export default function Home({ social_icon, about, experiences, skills, projects
       <Header social_icon={social_icon} />
 
       <section id='hero' className='snap-start'>
-        <Hero />
+        <Hero about={about} />
       </section>
 
       <section id='about' className='snap-center'>
@@ -31,27 +31,7 @@ export default function Home({ social_icon, about, experiences, skills, projects
       </section>
 
       <section id='experience' className='snap-center'>
-        {/* <motion.div
-          initial={{
-            opacity: 0
-          }}
-          whileInView={{
-            opacity: 1
-          }}
-          transition={{
-            duration: 1.5
-          }}
-          className='h-screen flex relative flex-col text-left md:flex-row max-w-full p-10 justify-evenly mx-auto items-center'>
-          <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Experience</h3>
 
-          <div className='w-full flex space-x-5 overflow-x-scroll overflow-y-hidden p-10 pb-28 snap-x snap-mandatory  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 scrollbar-thin'>
-             {
-              experiences.map((experience: { _id: Key | null | undefined }) => <ExperienceCard key={experience._id} experience={experience}></ExperienceCard>)
-            } 
-
-
-    </div>
-        </motion.div >  */}
         <Experiences experiences={experiences} />
       </section >
 
@@ -70,7 +50,6 @@ export default function Home({ social_icon, about, experiences, skills, projects
       <Link href='#hero'>
         <footer className='sticky bottom-4 w-fit mx-auto cursor-pointer'>
           <div className='flex items-center justify-center'>
-            {/* <img className='w-10 h-10 rounded-full grayscale hover:grayscale-0' src="https://avatars.githubusercontent.com/u/30996446?v=4" alt="" /> */}
             <p className='text-gray-400'>Back to Top</p>
           </div>
         </footer>

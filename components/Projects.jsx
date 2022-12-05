@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SocialIcon } from 'react-social-icons';
+import Image from 'next/image';
 
 function Projects({ projects }) {
 
@@ -29,7 +30,7 @@ function Projects({ projects }) {
                                 <span className='font-bold'>Project {index + 1} of {projects.length}:</span>
                             </div>
                             <div className=' relative top-16 md:flex md:ml-36'>
-                                <motion.img
+                                <motion.div
                                     initial={{
                                         y: -300,
                                         opacity: 0,
@@ -45,7 +46,11 @@ function Projects({ projects }) {
                                         once: true
                                     }}
                                     className='w-80 border-2 cursor-pointer'
-                                    src={project.photo} alt="" />
+                                >
+
+                                    <Image src={project.photo} alt="" height='60' width='80' layout='responsive'></Image>
+
+                                </motion.div>
                                 <div className='flex md:flex-col items-center justify-center md:space-x-2'>
                                     {/* social icons */}
                                     <div className='group hover:bg-gray-700 md:w-36 flex items-center rounded-md cursor-pointer transition hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out'>
