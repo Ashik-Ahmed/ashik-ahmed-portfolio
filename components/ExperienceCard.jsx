@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ExperienceCard({ experience }) {
 
@@ -8,7 +9,7 @@ export default function ExperienceCard({ experience }) {
     return (
         <article className='flex flex-col rounded-lg space-y-3 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#505050] md:px-10 py-3  cursor-pointer transition-opacity duration-200 relative top-20'>
             <div className='flex'>
-                <motion.img
+                <motion.div
                     initial={{
                         y: -100,
                         opacity: 0
@@ -23,25 +24,27 @@ export default function ExperienceCard({ experience }) {
                     viewport={{
                         once: true
                     }}
-                    className='w-32 h-32 p-2 xl:w-[200px] xl:h-[200px] object-fill object-center border-2 bg-white'
-                    src={companyLogo} alt="" />
+                    className='w-24 h-24 xl:w-[140px] xl:h-[140px]  border-2'
+                >
+                    <Image src={companyLogo} alt={company} height='90' width='90' layout='responsive' className='object-fill object-center'></Image>
+                </motion.div>
 
                 <div className='px-2 md:px-10'>
                     <h4 className='text-xl md:text-4xl font-light'>{role}</h4>
-                    <p className='font-bold text-lg md:text-2xl mt-1'>{company}</p>
+                    <p className='font-bold text-lg md:text-2xl mt-1'>{company} <span className='text-sm italic font-normal'>( {new Date(start).toISOString().split('T')[0]} - {end ? new Date(end).toISOString().split('T')[0] : 'Runnning'} )</span></p>
                     <div className='flex space-x-2 my-2'>
                         {
                             tech?.map((technology, index) => (
                                 <>
-                                    <img key={index} className='w-10 h-10' src={technology} alt="" />
+                                    <Image key={index} src={technology} height='40' width='40' className='w-10 h-10' alt=""></Image>
                                 </>
                             ))
                         }
                     </div>
-                    <div>
+                    {/* <div>
                         <p className='text-gray-300'><span className='font-bold'>Started :</span> {new Date(start).toISOString().split('T')[0]}</p>
                         <p className='text-gray-300'><span className='font-bold'>Ended :</span> {end ? new Date(end).toISOString().split('T')[0] : 'Runnning'}</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div>

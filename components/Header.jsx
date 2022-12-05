@@ -31,7 +31,7 @@ export default function Header({ social_icon }) {
                                 url={social.link}
                                 fgColor='gray'
                                 bgColor='transparent'
-                                className=' hover:bg-[#F7AB0A]/50 rounded-md' />
+                                className='border border-gray-700 hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 rounded-md transition duration-300 ease-in-out hover:scale-110' />
                         </>
                     ))
                 }
@@ -50,7 +50,7 @@ export default function Header({ social_icon }) {
                 transition={{
                     duration: 1.5
                 }}
-                className='flex flex-row items-center text-gray-300 cursor-pointer hover:bg-[#F7AB0A]/50 pr-2 rounded-md'>
+                className='flex flex-row items-center text-gray-300 cursor-pointer border border-gray-700 hover:border-[#F7AB0A]/40 pr-2 rounded-md'>
                 <SocialIcon className='cursor-pointer'
                     url='#contact'
                     network='email'
