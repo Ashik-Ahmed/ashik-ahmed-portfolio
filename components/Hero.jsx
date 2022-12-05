@@ -7,7 +7,6 @@ import BackgroundCircles from './BackgroundCircles';
 export default function Hero({ about }) {
 
     const { introPhoto } = about[0];
-    console.log(introPhoto)
 
     const [text, count] = useTypewriter({
         words: ['Hi, This is Ashik', 'A Web Developer </>'],
