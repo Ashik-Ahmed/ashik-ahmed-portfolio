@@ -31,7 +31,7 @@ export default function ExperienceCard({ experience }) {
 
                 <div className='px-2 md:px-10'>
                     <h4 className='text-xl md:text-4xl font-light'>{role}</h4>
-                    <p className='font-bold text-lg md:text-2xl mt-1'>{company} <span className='text-sm italic font-normal'>( {new Date(start).toISOString().split('T')[0]} - {end ? new Date(end).toISOString().split('T')[0] : 'Continue'} )</span></p>
+                    <p className='font-bold text-lg md:text-2xl mt-1'>{company} <span className='text-sm italic font-normal'>( {new Date(start).toISOString().split('T')[0]} - {end ? new Date(end).toISOString().split('T')[0] : 'Continue...'} )</span></p>
                     <div className='flex space-x-2 my-2'>
                         {
                             tech?.map((technology, index) => (
