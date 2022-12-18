@@ -74,7 +74,10 @@ export async function getServerSideProps(context) {
   const data = await db.collection('experience').find({}).toArray();
   const experiences = JSON.parse(JSON.stringify(data));
 
-  const skillsData = await db.collection('skills').find({}).toArray();
+  // const skillsData = await db.collection('skills').find({}).toArray();
+  // const skills = JSON.parse(JSON.stringify(skillsData));
+
+  const skillsData = await db.collection('skillset').find({}).toArray();
   const skills = JSON.parse(JSON.stringify(skillsData));
 
   const projectsData = await db.collection('projects').find({}).toArray();

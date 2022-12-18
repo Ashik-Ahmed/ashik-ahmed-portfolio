@@ -36,7 +36,7 @@ export default function ExperienceCard({ experience }) {
                         {
                             tech?.map((technology, index) => (
                                 <>
-                                    <Image key={index} src={technology} height='40' width='40' className='w-10 h-10' alt=""></Image>
+                                    <Image key={index} src={technology} height='40' width='40' className='w-10 h-10 grayscale' alt=""></Image>
                                 </>
                             ))
                         }

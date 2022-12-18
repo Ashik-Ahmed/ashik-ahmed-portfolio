@@ -19,7 +19,7 @@ export default function About({ about }) {
             }}
             className='flex flex-col relative h-screen text-center md:text-left md:flex-row px-10 justify-evenly mx-auto items-center overflow-hidden'>
 
-            <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-400 font-bold text-3xl'>About</h3>
+            <h3 className='absolute top-16 uppercase tracking-[20px] text-gray-400 font-bold text-3xl'>About</h3>
 
             <motion.div
                 initial={{

@@ -23,7 +23,7 @@ export default function Experiences({ experiences }) {
             </div> */}
             <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-400 font-bold text-3xl'>Experience</h3>
 
-            <div className='w-full flex space-x-5 overflow-x-scroll overflow-y-hidden p-2  pb-28 md:snap-x snap-mandatory  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 scrollbar-thin'>
+            <div className='w-full flex space-x-5 overflow-x-scroll overflow-y-hidden p-2 pb-28 my-auto md:snap-x snap-mandatory scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 scrollbar-thin'>
                 {/* <ExperienceCard />
                 <ExperienceCard />
                 <ExperienceCard />

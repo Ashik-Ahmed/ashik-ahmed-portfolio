@@ -9,7 +9,7 @@ export default function Hero({ about }) {
     const { introPhoto } = about[0];
 
     const [text, count] = useTypewriter({
-        words: ['Hi, This is Ashik', 'A Web Developer </>'],
+        words: ['Hi, This is Ashik', 'Your website Builder </>'],
         loop: true,
         delaySpeed: 2000,
     })

@@ -18,14 +18,14 @@ export default function Skill({ directionLeft, skill }) {
                     opacity: 1,
                     x: 0,
                 }}
-                className='flex space-x-5 rounded-md items-center bg-white p-3 w-72'
+                className='flex flex-col rounded-md items-center w-20 mx-auto  shadow-[0_15px_10px_-15px_rgba(240,240,240,0.3)]'
             >
-                <Image src={icon} className='w-24 h-24  filter group-hover:grayscale group-hover:opacity-20 transition duration-300 ease-in-out' height='96' width='96' alt={name}></Image>
+                <Image src={icon} className='mx-auto filter group-hover:grayscale group-hover:opacity-20 transition duration-300 ease-in-out object-contain' height='42' width='42' alt={name} />
                 {/* <img
                     src={icon}
                     className='w-24 h-24  filter group-hover:grayscale group-hover:opacity-20 transition duration-300 ease-in-out'
                 /> */}
-                <p className='text-gray-700 text-2xl font-bold uppercase  group-hover:opacity-20 hidden md:block'>{name}</p>
+                <p className='text-white text-sm text-center group-hover:opacity-20 hidden md:block'>{name}</p>
             </motion.div>
 
             <div className='absolute rounded-md opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-gray-900 w-full h-full z-0'>

@@ -39,26 +39,28 @@ export default function Contact() {
         <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl p-10 justify-evenly mx-auto items-center'>
             <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-400 font-bold text-3xl'>Contact</h3>
 
-            <div className='flex flex-col space-y-10 absolute top-36'>
-                <h4 className='text-4xl font-semibold text-center'>
-                    I have got just what you need.{' '}
-                    <span className='underline decoration-[#F7AB0A]/50 '>{`Let's Talk`}</span>
-                </h4>
+            <div className='flex flex-col space-y-12 absolute top-36'>
+                <div className='space-y-3'>
+                    <h4 className='text-4xl font-semibold text-center'>
+                        I have got just what you need.{' '}
+                        <span className='underline decoration-[#F7AB0A]/50 '>{`Let's Talk`}</span>
+                    </h4>
 
-                <div className='space-y-2'>
-                    <div className='flex items-center space-x-5 justify-center'>
-                        <BsTelephoneFill className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-                        <p className='text-xl'>+8801521464568</p>
-                    </div>
+                    <div className='flex justify-around items-center'>
+                        <div className='flex items-center space-x-1 justify-center'>
+                            <BsTelephoneFill className='text-[#F7AB0A] h-5 w-5' />
+                            <p >+8801521464568</p>
+                        </div>
 
-                    <div className='flex items-center space-x-5 justify-center'>
-                        <MdEmail className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-                        <p className='text-xl'>ashikahmed121@gmail.com</p>
-                    </div>
+                        <div className='flex items-center space-x-1 justify-center'>
+                            <MdEmail className='text-[#F7AB0A] h-5 w-5' />
+                            <p >ashikahmed121@gmail.com</p>
+                        </div>
 
-                    <div className='flex items-center space-x-5 justify-center'>
-                        <ImLocation className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-                        <p className='text-xl'>Mohammadpur, Dhaka-1207</p>
+                        <div className='flex items-center space-x-1 justify-center'>
+                            <ImLocation className='text-[#F7AB0A] h-5 w-5' />
+                            <p >Mohammadpur, Dhaka-1207</p>
+                        </div>
                     </div>
                 </div>
                 <form ref={form} onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
